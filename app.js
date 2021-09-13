@@ -151,7 +151,7 @@ function createBricks() {
 		bricks[r] = [];
 		for (let c = 0; c < brick.column; c++) {
 			bricks[r][c] = {
-				x: c * (brick.width + brick.offSetLeft) + brick.offSetLeft,
+				x: c * brick.width + brick.offSetLeft,
 				y: r * (brick.height + brick.offSetTop) + brick.offSetTop + brick.marginTop,
 				status: true,
 			};
@@ -171,12 +171,12 @@ function drawBricks() {
 				ctx.strokeStyle = brick.strokeColor;
 				ctx.strokeRect(bricks[r][c].x, bricks[r][c].y, brick.width, brick.height);
 			}
-			// if (bricks[r][c] == bricks[r_random][c_random]) {
-			// 	ctx.fillStyle = brick.fillColor[1];
-			// 	ctx.fillRect(bricks[r_random][c_random].x, bricks[r_random][c_random].y, brick.width, brick.height);
-			// 	ctx.strokeStyle = brick.strokeColor;
-			// 	ctx.strokeRect(bricks[r_random][c_random].x, bricks[r_random][c_random].y, brick.width, brick.height);
-			// }
+			if (bricks[r][c] == bricks[r_random][c_random]) {
+				ctx.fillStyle = brick.fillColor[1];
+				ctx.fillRect(bricks[r_random][c_random].x, bricks[r_random][c_random].y, brick.width, brick.height);
+				ctx.strokeStyle = brick.strokeColor;
+				ctx.strokeRect(bricks[r_random][c_random].x, bricks[r_random][c_random].y, brick.width, brick.height);
+			}
 		}
 	}
 }
