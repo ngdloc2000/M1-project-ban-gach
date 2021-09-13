@@ -1,4 +1,4 @@
-const cvs = document.getElementById("breakout");
+const cvs = document.getElementById("game");
 const ctx = cvs.getContext("2d"); // Dùng để vẽ hình ảnh
 
 const PADDLE_WIDTH = 100;
